@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsi5plhcue3fp"]
+
+[ext_resource type="PackedScene" uid="uid://djru63b841b37" path="res://Scenes/Player/player.tscn" id="1_d6w7b"]
+[ext_resource type="PackedScene" uid="uid://b4tti880eu8h4" path="res://Scenes/Melochi/perehod_with_key.tscn" id="2_t0xnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77u4a"]
+size = Vector2(388, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek3y8"]
+size = Vector2(56, 20)
+
+[node name="Test" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(626, 545)
+shape = SubResource("RectangleShape2D_77u4a")
+
+[node name="Player" parent="." instance=ExtResource("1_d6w7b")]
+position = Vector2(552, 225)
+
+[node name="Perehod_with_key" parent="." instance=ExtResource("2_t0xnm")]
+position = Vector2(827, 410)
+
+[node name="CollisionShape2D" parent="Perehod_with_key" index="0"]
+position = Vector2(-56, 17)
+shape = SubResource("RectangleShape2D_ek3y8")
+
+[editable path="Perehod_with_key"]
